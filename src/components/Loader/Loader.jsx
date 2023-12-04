@@ -18,7 +18,7 @@ const Loader = () => {
         }}
         height="12"
         width="12"
-        color="#f0f1f6"
+        color="#1b1bfb93"
         display="flex"
         alignItems="center"
         ariaLabel="circles-loading"

@@ -18,7 +18,7 @@ const HomePage = () => {
     <div>
       <div style={styles.container}>
         <h1 style={styles.title}>
-          Welcome to Phone-Book page!!!{' '}
+          Welcome to Phone Book !{' '}
           <span role="img" aria-label="Greeting icon">
             💁‍♀️
           </span>
