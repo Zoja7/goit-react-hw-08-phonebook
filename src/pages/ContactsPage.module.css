@@ -1,0 +1,11 @@
+.contactsPageWrapper{
+    padding-top: 60px;
+    padding-bottom: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    height: 100vh;
+
+}

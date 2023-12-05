@@ -1,19 +1,58 @@
 import AuthNav from 'components/AuthNav/AuthNav';
 import Navigation from 'components/Navigation/Navigation';
 import UserMenu from 'components/UserMenu/UserMenu';
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectAuthenticated } from 'redux/auth/selectors';
-import css from './AppBar.module.css'
 
-const AppBar = () => {
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import { ThemeProvider } from '@emotion/react';
+import { createTheme } from '@mui/material';
+
+const theme = createTheme({
+  palette: {
+    background: {
+      green: '#59d6ac',
+    },
+  },
+});
+
+export default function ButtonAppBar() {
   const authenticated = useSelector(selectAuthenticated);
   return (
-    <header className={css.header}>
-      <Navigation />
-      {authenticated ? <UserMenu /> : <AuthNav />}
-    </header>
-  );
-};
+    <ThemeProvider theme={theme}>
+      {' '}
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar
+          position="sticky"
+          sx={{
+            bgcolor: 'background.green',
+            paddingLeft: 2,
+            paddingTop: 2,
+            paddingBottom: 2,
+            marginBottom: 4,
+          }}
+        >
+          <Toolbar>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              <Navigation />
+            </Typography>
 
-export default AppBar;
+            {authenticated ? (
+              <Typography variant="h6" color="inherit" mr={10}>
+                <UserMenu />
+              </Typography>
+            ) : (
+              <Typography variant="h6" color="inherit">
+                <AuthNav />
+              </Typography>
+            )}
+          </Toolbar>
+        </AppBar>
+      </Box>
+    </ThemeProvider>
+  );
+}

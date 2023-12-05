@@ -4,13 +4,13 @@ import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
 import Loader from 'components/Loader/Loader';
-// import { selectContactsIsLoading } from 'redux/contacts/selectors';
+
 import { addContactThunk } from 'redux/contacts/operations';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
-  // const isLoadingFromRedux = useSelector(selectContactsIsLoading);
+
   const [isLoading, setIsLoading] = useState(false);
   const [name, setName] = useState('');
   const [number, setPhone] = useState('');
@@ -79,7 +79,7 @@ const ContactForm = () => {
   };
 
   return (
-    <>
+    <div className={css.contactsFormWrapper}>
       <form className={css.formContainer} onSubmit={handleSubmit}>
         <label className={css.inputWrapper}>
           <p>Name</p>
@@ -108,7 +108,7 @@ const ContactForm = () => {
           {isLoading ? <Loader /> : 'Add contact'}
         </button>
       </form>
-    </>
+    </div>
   );
 };
 

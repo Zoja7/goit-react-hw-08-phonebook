@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { loginThunk } from 'redux/auth/operations';
+import css from './LoginForm.module.css';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -17,19 +18,21 @@ const LoginForm = () => {
     form.reset();
   };
   return (
-    <form onSubmit={onSubmit} autoComplete="off">
-      <label>
-        <span>Email: </span>
+    <form className={css.formLogin} onSubmit={onSubmit} autoComplete="off">
+      <label className={css.labelLogin}>
+        <span>Email </span>
         <input
+          className={css.inputLogin}
           type="emil"
           placeholder="hotmail@hotmail.com"
           required
           name="userEmail"
         />
       </label>
-      <label>
-        <span>Password: </span>
+      <label className={css.labelLogin}>
+        <span>Password </span>
         <input
+          className={css.inputLogin}
           type="password"
           placeholder="*******"
           required
@@ -38,7 +41,9 @@ const LoginForm = () => {
         />
       </label>
       <br />
-      <button type="submit">Sign In</button>
+      <button className={css.inputLoginButton} type="submit">
+        Sign In
+      </button>
     </form>
   );
 };

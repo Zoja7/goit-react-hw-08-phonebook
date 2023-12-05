@@ -1,12 +1,13 @@
+
 .formContainer {
   padding: 10px;
-  max-width: 300px;
   border: 1px solid #78c7af;
   border-radius: 2px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   align-items: flex-start;
+  
 }
 
 .submitButton {
@@ -30,7 +31,7 @@
 
 .inputWrapper {
   width: 100%;
-  max-width: 180px;
+  min-width: 226px;
   display: flex;
   flex-direction: column;
   gap: 6px;

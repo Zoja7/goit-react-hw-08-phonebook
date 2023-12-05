@@ -10,14 +10,13 @@ import {
   selectContactsError,
   selectContactsIsLoading,
 } from 'redux/contacts/selectors';
+import css from './ContactsPage.module.css';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const isLoadingFromRedux = useSelector(selectContactsIsLoading);
   const error = useSelector(selectContactsError);
-
-  // const showContacts = Array.isArray(contacts) && contacts.length > 0;
 
   const showContacts =
     !error && !isLoadingFromRedux && contacts && contacts.length > 0;
@@ -33,7 +32,7 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={css.contactsPageWrapper}>
       <h1>Contacts Page</h1>
       <ContactForm />
       <Filter />

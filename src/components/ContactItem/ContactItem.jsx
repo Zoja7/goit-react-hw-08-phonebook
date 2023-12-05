@@ -40,7 +40,6 @@ export default function ContactItem({ contact }) {
         }}
       >
         {isLoading ? <Loader /> : <IconTrash className={css.svgIcon} />}
-        {/* <IconTrash className={css.svgIcon} /> */}
       </button>
     </li>
   );

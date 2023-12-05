@@ -8,10 +8,6 @@ import RestrictedRoute from './RestrictedRoute';
 import PrivetRoute from './PrivetRoute';
 import { useDispatch } from 'react-redux';
 import { refreshThunk } from 'redux/auth/operations';
-// import HomePage from 'pages/HomePage';
-// import LoginPage from 'pages/LoginPage';
-// import RegisterPage from 'pages/RegisterPage';
-// import ContactsPage from 'pages/ContactsPage';
 
 const HomePage = lazy(() => import('pages/HomePage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage'));

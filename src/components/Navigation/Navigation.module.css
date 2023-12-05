@@ -5,11 +5,14 @@
   padding: 20px;
   margin-right: 25px;
   display: inline-flex;
-  border: 1px solid black;
   border-radius: 10px;
   transition: all 0.3s;
 }
 .active {
-  background-color: rgb(103, 41, 41);
   color: #fff;
+
+  -webkit-box-shadow: inset 3px 3px 41px -15px rgb(171, 128, 211);
+-moz-box-shadow: inset 3px 3px 41px -15px rgb(171, 128, 211);
+box-shadow: inset 3px 3px 41px -15px rgb(171, 128, 211);
 }
+
