@@ -30,7 +30,8 @@ export default function ButtonAppBar() {
           position="sticky"
           sx={{
             bgcolor: 'background.green',
-            paddingLeft: 2,
+            paddingLeft: 4,
+            paddingRight: 4,
             paddingTop: 2,
             paddingBottom: 2,
             marginBottom: 4,
@@ -42,7 +43,7 @@ export default function ButtonAppBar() {
             </Typography>
 
             {authenticated ? (
-              <Typography variant="h6" color="inherit" mr={10}>
+              <Typography variant="h6" color="inherit">
                 <UserMenu />
               </Typography>
             ) : (

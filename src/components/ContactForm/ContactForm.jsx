@@ -84,6 +84,7 @@ const ContactForm = () => {
         <label className={css.inputWrapper}>
           <p>Name</p>
           <input
+            className={css.inputContacts}
             type="text"
             name="name"
             required
@@ -95,6 +96,7 @@ const ContactForm = () => {
         <label className={css.inputWrapper}>
           <p>Number</p>
           <input
+            className={css.inputContacts}
             type="tel"
             name="number"
             required

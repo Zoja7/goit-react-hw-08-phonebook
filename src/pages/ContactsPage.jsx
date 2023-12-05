@@ -33,7 +33,7 @@ const ContactsPage = () => {
 
   return (
     <div className={css.contactsPageWrapper}>
-      <h1>Contacts Page</h1>
+      {/* <h1>Contacts Page</h1> */}
       <ContactForm />
       <Filter />
       {error !== null && <p className="error-bage">{error}</p>}
