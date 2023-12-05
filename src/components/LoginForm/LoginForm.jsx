@@ -13,6 +13,17 @@ const LoginForm = () => {
     const email = form.elements.userEmail.value;
     const password = form.elements.userPassword.value;
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address');
+      return;
+    }
+
+    if (password.length < 7) {
+      alert('Password should be at least 7 characters long');
+      return;
+    }
+
     const formData = { email, password };
     dispatch(loginThunk(formData));
     form.reset();

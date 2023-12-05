@@ -11,6 +11,8 @@ import {
   selectContactsIsLoading,
 } from 'redux/contacts/selectors';
 import css from './ContactsPage.module.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -24,10 +26,12 @@ const ContactsPage = () => {
   useEffect(() => {
     dispatch(fetchContactsThunk())
       .then(() => {
-        alert('Contacts downloaded successfully!');
+        // alert('Contacts downloaded successfully!');
+        toast.info('Contacts downloaded successfully!', {});
       })
       .catch(error => {
-        alert(`Error downloading contacts: ${error}`);
+        // alert(`Error downloading contacts: ${error}`);
+        toast.info(`Error downloading contacts: ${error}`, {});
       });
   }, [dispatch]);
 

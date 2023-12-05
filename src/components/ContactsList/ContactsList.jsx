@@ -2,8 +2,6 @@ import ContactItem from 'components/ContactItem/ContactItem';
 import css from './ContactList.module.css';
 import { useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/selectors';
-// import { useEffect } from 'react';
-// import { fetchContactsThunk } from 'redux/contacts/operations';
 
 export default function ContactsList() {
   const filter = useSelector(state => state.filtersStore.filters);

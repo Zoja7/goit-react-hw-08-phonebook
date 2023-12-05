@@ -1,3 +1,6 @@
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import css from './App.module.css';
 import { Suspense, lazy, useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
@@ -51,7 +54,7 @@ export const App = () => {
   useEffect(() => {
     dispatch(refreshThunk());
   }, [dispatch]);
-
+  const notify = () => toast('Wow so easy!');
   return (
     <Layout>
       <Suspense fallback={<Loader />}>
@@ -62,6 +65,21 @@ export const App = () => {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Suspense>
+      <div>
+        <button className={css.buttonNotify} onClick={notify}>
+          Notify!
+        </button>
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          closeOnClick={true}
+          pauseOnHover={true}
+          draggable={true}
+          progress={undefined}
+          theme="light"
+        />
+      </div>
     </Layout>
   );
 };

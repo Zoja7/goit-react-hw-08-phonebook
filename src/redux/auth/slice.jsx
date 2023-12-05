@@ -5,6 +5,7 @@ import {
   refreshThunk,
   registerThunk,
 } from './operations';
+import { toast } from 'react-toastify';
 
 const initialState = {
   isLoading: false,
@@ -63,6 +64,11 @@ const authSlice = createSlice({
         (state, { payload }) => {
           state.isLoading = false;
           state.error = payload;
+          // alert('Incorrectly entered data ! Please enter correct information!');
+          toast.info(
+            'Incorrectly entered data ! Please enter correct information!',
+            {}
+          );
         }
       ),
 });

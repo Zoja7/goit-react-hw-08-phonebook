@@ -6,6 +6,8 @@ import { useDispatch } from 'react-redux';
 import Loader from 'components/Loader/Loader';
 import { useState } from 'react';
 import { deleteContactThunk } from 'redux/contacts/operations';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import { selectContactsIsLoading } from 'redux/contacts/selectors';
 
 export default function ContactItem({ contact }) {
@@ -20,11 +22,13 @@ export default function ContactItem({ contact }) {
     dispatch(deleteContactThunk(id))
       .then(() => {
         setIsLoading(false);
-        alert('Contact deleted successfully!');
+        // alert('Contact deleted successfully!');
+        toast.info('Contact deleted successfully!', {});
       })
       .catch(error => {
         setIsLoading(false);
-        alert(`Error deleting contact: ${error}`);
+        // alert(`Error deleting contact: ${error}`);
+        toast.info(`Error deleting contact: ${error}`, {});
       });
   };
   return (

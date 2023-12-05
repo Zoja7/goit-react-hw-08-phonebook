@@ -6,6 +6,8 @@ import { selectContacts } from 'redux/contacts/selectors';
 import Loader from 'components/Loader/Loader';
 
 import { addContactThunk } from 'redux/contacts/operations';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -22,7 +24,8 @@ const ContactForm = () => {
         contact.number.toLowerCase() === data.number.toLowerCase()
     );
     if (hasDuplicated) {
-      alert(`'${data.name && data.number}' is already in contacts!`);
+      // alert(`'${data.name && data.number}' is already in contacts!`);
+      toast.info(`'${data.name && data.number}' is already in contacts!`, {});
       return;
     }
     const newContact = {
@@ -36,11 +39,13 @@ const ContactForm = () => {
         setIsLoading(false);
         setPhone('');
         setName('');
-        alert('Contact added successfully!');
+        // alert('Contact added successfully!');
+        toast.info('Contact added successfully!', {});
       })
       .catch(error => {
         setIsLoading(false);
-        alert(`Error adding contact: ${error}`);
+        // alert(`Error adding contact: ${error}`);
+        toast.info(`Error adding contact: ${error}`, {});
       });
   };
 
