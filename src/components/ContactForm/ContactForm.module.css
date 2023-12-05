@@ -1,6 +1,7 @@
 
 .formContainer {
   padding: 10px;
+  max-width: 300px;
   border: 1px solid #78c7af;
   border-radius: 2px;
   display: flex;
