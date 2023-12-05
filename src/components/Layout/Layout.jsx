@@ -7,7 +7,7 @@ import css from './Layout.module.css';
 
 const Layout = ({ children }) => {
   return (
-    <Container maxWidth="sx" sx={{ overflow: 'hidden', maxWidth: 1220 }}>
+    <Container maxWidth="sx" sx={{ overflow: 'hidden' }}>
       <Box sx={{ bgcolor: '#caf2e9', height: '100vh' }}>
         <AppBar />
         <Suspense fallback={null}>
