@@ -8,12 +8,10 @@ import { useState } from 'react';
 import { deleteContactThunk } from 'redux/contacts/operations';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { selectContactsIsLoading } from 'redux/contacts/selectors';
 
 export default function ContactItem({ contact }) {
   const { id, name, number } = contact;
   const dispatch = useDispatch();
-  // const isLoadingFromRedux = useSelector(selectContactsIsLoading);
 
   const [isLoading, setIsLoading] = useState(false);
 
